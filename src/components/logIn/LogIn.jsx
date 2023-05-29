@@ -25,13 +25,14 @@ export default function LogIn(){
         }
         else alert("შეავსე ყველა ველი!")
     }
+   
 
     return(
         <div>
             {isLoggedIn ? (
                  <div className="logIn-wrapper">
                  <img className="icon" src={icon} alt="icon" />
-                 <h3 className="login-text">Tornike</h3>
+                 <h3 className="login-text">{email}</h3>
                  <img className="profilePic" src={profilePic} alt="Profile picture" />
                  <button onClick={logOut}  id="button" className="button">LOG OUT</button>
             </div>
@@ -45,7 +46,7 @@ export default function LogIn(){
                     <img src={forEmail} alt="" />
                 </div>
                 <div className="passInput">
-                    <input  type="password" className="Email" placeholder="Password" onChange={(event) => setPassword(event.target.value)} /> 
+                    <input type="password" className="Email" placeholder="Password" onChange={(event) => setPassword(event.target.value)} /> 
                     <img src={forPass} alt="" />
                 </div>
                 <button className="button" onClick={logIn} >Log In</button>
